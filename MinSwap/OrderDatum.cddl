@@ -1,0 +1,42 @@
+address = bytes
+hash = bytes
+
+asset = {
+    policy: bytes
+    name: bytes
+}
+
+order-step = #6.0(swap-exact-in) / #6.1(swap-exact-out) / #6.2(deposit) / #6.3(withdraw) / #6.4(one-side-deposit)
+
+swap-exact-in = {
+    desiredCoin: asset
+    minimumExpected: int
+}
+
+swap-exact-out = {
+    desiredCoin: asset
+    minimumExpected: int
+}
+
+deposit = {
+    minimumExpected: int
+}
+
+withdraw = {
+    coinAExpected: int
+    coinBExpected: int
+}
+
+one-side-deposit = {
+    desiredCoin: asset
+    expectedLp: int
+}
+
+order-datum = {
+    odSender: address
+    odReceiver: address
+    ? odDatumHash: hash
+    odStep: order-step
+    odFee: int
+    odOutAda: int
+}

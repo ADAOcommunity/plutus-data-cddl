@@ -1,0 +1,20 @@
+address = bytes
+hash = bytes
+
+asset = {
+    policy: bytes
+    name: bytes
+}
+
+profit-sharing = {
+    psFeeTo: address
+    psFeeDatumHash: hash
+}
+
+pool-datum = {
+    pdCoinA: asset
+    pdCoinB: asset
+    pdTotalLiquidity: int
+    pdRootKLast: int
+    ? pdProfitSharing: profit-sharing
+}
